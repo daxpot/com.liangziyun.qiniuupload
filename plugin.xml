@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.liangziyun.qiniuupload"
+    version="0.0.1">
+
+    <name>QiniuUpload</name>
+    <description>A cordova plugin, a JS version of Qiniu upload</description>
+    <license>MIT</license>
+
+    <!--require cordova version -->
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+      <!-- js module-->
+    <js-module src="www/qiniuupload.js" name="QiniuUpload">
+        <clobbers target="QiniuUpload" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+      <config-file target="config.xml" parent="/*">
+        <feature name="QiniuUpload">
+          <param name="ios-package" value="CDVQiniuUpload"/>
+        </feature>
+      </config-file>
+
+      <header-file src="src/ios/CDVQiniuUpload.h" />
+      <source-file src="src/ios/CDVQiniuUpload.m" />
+
+      <header-file src="src/ios/QiniuSDK/QiniuSDK.h" />
+
+      <header-file src="src/ios/QiniuSDK/Common/GTM_Base64.h" />
+      <source-file src="src/ios/QiniuSDK/Common/GTM_Base64.m" />
+      <header-file src="src/ios/QiniuSDK/Common/QNAsyncRun.h" />
+      <source-file src="src/ios/QiniuSDK/Common/QNAsyncRun.m" />
+      <header-file src="src/ios/QiniuSDK/Common/QNCrc32.h" />
+      <source-file src="src/ios/QiniuSDK/Common/QNCrc32.m" />
+      <header-file src="src/ios/QiniuSDK/Common/QNEtag.h" />
+      <source-file src="src/ios/QiniuSDK/Common/QNEtag.m" />
+      <header-file src="src/ios/QiniuSDK/Common/QNUrlSafeBase64.h" />
+      <source-file src="src/ios/QiniuSDK/Common/QNUrlSafeBase64.m" />
+      <header-file src="src/ios/QiniuSDK/Common/QNVersion.h" />
+
+
+      <header-file src="src/ios/QiniuSDK/Http/QNDns.h" />
+      <source-file src="src/ios/QiniuSDK/Http/QNDns.m" />
+      <header-file src="src/ios/QiniuSDK/Http/QNHttpManager.h" />
+      <source-file src="src/ios/QiniuSDK/Http/QNHttpManager.m" />
+      <header-file src="src/ios/QiniuSDK/Http/QNResponseInfo.h" />
+      <source-file src="src/ios/QiniuSDK/Http/QNResponseInfo.m" />
+      <header-file src="src/ios/QiniuSDK/Http/QNSessionManager.h" />
+      <source-file src="src/ios/QiniuSDK/Http/QNSessionManager.m" />
+      <header-file src="src/ios/QiniuSDK/Http/QNUserAgent.h" />
+      <source-file src="src/ios/QiniuSDK/Http/QNUserAgent.m" />
+      <header-file src="src/ios/QiniuSDK/Http/QNHttpDelegate.h" />
+
+      <header-file src="src/ios/QiniuSDK/Recorder/QNFileRecorder.h" />
+      <source-file src="src/ios/QiniuSDK/Recorder/QNFileRecorder.m" />
+      <header-file src="src/ios/QiniuSDK/Recorder/QNRecorderDelegate.h" />
+
+
+      <header-file src="src/ios/QiniuSDK/Storage/QNConfiguration.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNConfiguration.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNFormUpload.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNFormUpload.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNResumeUpload.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNResumeUpload.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNUploadManager.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNUploadManager.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNUploadOption.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNUploadOption.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNUpToken.h" />
+      <source-file src="src/ios/QiniuSDK/Storage/QNUpToken.m" />
+      <header-file src="src/ios/QiniuSDK/Storage/QNUploadOption+Private.h" />
+
+      <header-file src="src/ios/AFNetworking/AFNetworking.h" />
+      <header-file src="src/ios/AFNetworking/AFHTTPRequestOperation.h" />
+      <source-file src="src/ios/AFNetworking/AFHTTPRequestOperation.m" />
+      <header-file src="src/ios/AFNetworking/AFHTTPRequestOperationManager.h" />
+      <source-file src="src/ios/AFNetworking/AFHTTPRequestOperationManager.m" />
+      <header-file src="src/ios/AFNetworking/AFHTTPSessionManager.h" />
+      <source-file src="src/ios/AFNetworking/AFHTTPSessionManager.m" />
+      <header-file src="src/ios/AFNetworking/AFNetworkReachabilityManager.h" />
+      <source-file src="src/ios/AFNetworking/AFNetworkReachabilityManager.m" />
+      <header-file src="src/ios/AFNetworking/AFSecurityPolicy.h" />
+      <source-file src="src/ios/AFNetworking/AFSecurityPolicy.m" />
+      <header-file src="src/ios/AFNetworking/AFURLConnectionOperation.h" />
+      <source-file src="src/ios/AFNetworking/AFURLConnectionOperation.m" />
+      <header-file src="src/ios/AFNetworking/AFURLRequestSerialization.h" />
+      <source-file src="src/ios/AFNetworking/AFURLRequestSerialization.m" />
+      <header-file src="src/ios/AFNetworking/AFURLResponseSerialization.h" />
+      <source-file src="src/ios/AFNetworking/AFURLResponseSerialization.m" />
+      <header-file src="src/ios/AFNetworking/AFURLSessionManager.h" />
+      <source-file src="src/ios/AFNetworking/AFURLSessionManager.m" />
+
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="QiniuUpload">
+          <param name="android-package" value="com.liangziyun.qiniuupload.QiniuUpload"/>
+        </feature>
+      </config-file>
+      <source-file src="src/android/QiniuUpload.java" target-dir="src/com/liangziyun/qiniuupload" />
+      <source-file src="src/android/qiniu-android-sdk-7.0.7.jar" target-dir="libs" />
+      <source-file src="src/android/happy-dns-0.2.4.jar" target-dir="libs" />
+      <source-file src="src/android/android-async-http-1.4.6.jar" target-dir="libs" />
+  </platform>
+</plugin>
